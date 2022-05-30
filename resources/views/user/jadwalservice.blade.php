@@ -83,7 +83,7 @@
                   <li><a href="#">Home</a></li>
                   <li><a href="#">Jadwal Service</a></li>
                   <li><a href="#">Service Sekarang</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">Contacts</a></li>
                 </ul>
               </div>
     
