@@ -45,6 +45,7 @@
                 <th scope="col">Tanggal Service</th>
                 <th scope="col">No Kendaraan</th>
                 <th scope="col">Waktu Pengerjaan</th>
+                <th scope="col">Jenis Service</th>
                 <th scope="col">Status Service</th>
                 <th scope="col">Keterangan Service</th>
                 <th scope="col">Waktu Selesai Service</th>
@@ -68,11 +69,12 @@
                 <td>{{ $item->waktu }}</td>
                 <td>{{ $item->tanggal }}</td>
                 <td>{{ $item->plat }}</td>
-                <td>{{ $item->lama_proses }}</td>                  
+                <td>{{ $item->lama_proses }}</td> 
+                <td>{{ $item->nama }}</td>                      
                 <td name="status">{{ $item->status }}</td>
                 <td name="keterangan">{{ $item->keterangan }}</td>
                 <td>{{ $item->jam ?? "-" }}</td> 
-                <td>{{ $item->lama_proses }}</td>      
+                <td>{{ $item->lama_proses }}</td>        
                 <td>
                     <button type="button" name="editButton" class="btn btn-success" data-toggle="modal" data-target="#editModal" data-id="{{ $item->id }}"><i class="fa-solid fa-pen-to-square"></i></button>
 
@@ -89,7 +91,7 @@
             <tfoot>
               <tr>
                 {{-- colspan class utk menggabungkan colom --}}
-                <td colspan="11"></td>
+                <td colspan="12"></td>
                 <td><b>Jumlah Rata-rata</b></td>
                 <td>
                   @if($total > 0 && count($service) > 0 )

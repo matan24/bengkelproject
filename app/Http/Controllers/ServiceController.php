@@ -33,6 +33,7 @@ class ServiceController extends Controller
           service.waktu as waktu,
           service.tanggal as tanggal, 
           service.kendala as kendala,
+          jenisservice.kendala as kendala,
           jenisservice.waktu as lama_proses,
           jenisservice.nama as jenis
          ")->join("jenisservice","service.id_jenis","=","jenisservice.id")

@@ -40,6 +40,7 @@
                 <th scope="col">WhatsApp/Hp</th>
                 <th scope="col">Jam Service</th>
                 <th scope="col">Tanggal Service</th>
+                <th scope="col">Jenis Service</th>
                 <th scope="col">Waktu Pengerjaan</th>
                 <th scope="col">Status Service</th>
                 <th scope="col">Keterangan Service</th>
@@ -62,6 +63,7 @@
                 <td>{{ $item->no }}</td>
                 <td>{{ $item->waktu }}</td>
                 <td>{{ $item->tanggal }}</td>
+                <td>{{ $item->jenis ?? "Kosong" }}</td>
                 <td>{{ $item->lama_proses }}</td>                  
                 <td>{{ $item->status }}</td>
                 <td>{{ $item->keterangan }}</td>
@@ -72,7 +74,7 @@
             <tfoot>
               <tr>
                 {{-- colspan class utk menggabungkan colom --}}
-                <td colspan="9"></td>
+                <td colspan="10"></td>
                 <td><b>Jumlah Rata-rata</b></td>
                 <td>
                   @if($total > 0 && count($service) > 0 )

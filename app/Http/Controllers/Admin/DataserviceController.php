@@ -79,6 +79,7 @@ class DataserviceController extends Controller
             service.status as status,
             service.keterangan as keterangan,
             service.jam as jam,
+            jenisservice.nama as nama,
             jenisservice.waktu as lama_proses,
             jenisservice.nama as jenis
         ")->join("jenisservice","service.id_jenis","=","jenisservice.id")
