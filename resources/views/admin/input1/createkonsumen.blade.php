@@ -48,6 +48,8 @@
                 <th scope="col">Jenis Service</th>
                 <th scope="col">Status Service</th>
                 <th scope="col">Keterangan Service</th>
+                <th scope="col">Jenis Service</th>
+                <th scope="col">Waktu Tunggu</th>
                 <th scope="col">Waktu Selesai Service</th>
                 <th scope="col">TA</th>
                 <th scope="col">Action</th>
@@ -59,21 +61,25 @@
               @endphp
               @foreach ( $service as $item )
               @php
-                $total += $item->lama_proses;
-              @endphp            
+                $waktu_tunggu = ((strtotime($item->waktu_selesai) - strtotime($item->waktu_tiba)) / 60 - $item->lama_proses);
+                $ta= $item->lama_proses + $waktu_tunggu;
+                $total += $ta;
+                @endphp         
               <tr>                             
               <th scope="row">{{ $loop->iteration }}</th>
                 <td name="nama">{{ $item->nama }}</td>
                 <td>{{ $item->alamat }}</td>
                 <td>{{ $item->no }}</td>
-                <td>{{ $item->waktu }}</td>
+                <td>{{ $item->waktu_tiba }}</td>
                 <td>{{ $item->tanggal }}</td>
                 <td>{{ $item->plat }}</td>
                 <td>{{ $item->lama_proses }}</td> 
                 <td>{{ $item->nama }}</td>                      
                 <td name="status">{{ $item->status }}</td>
                 <td name="keterangan">{{ $item->keterangan }}</td>
-                <td>{{ $item->jam ?? "-" }}</td> 
+                <td>{{ $item->jenis }}</td>
+                <td>{{ $waktu_tunggu }}</td>
+                <td>{{ $item->waktu_selesai }}</td>
                 <td>{{ $item->lama_proses }}</td>        
                 <td>
                     <button type="button" name="editButton" class="btn btn-success" data-toggle="modal" data-target="#editModal" data-id="{{ $item->id }}"><i class="fa-solid fa-pen-to-square"></i></button>
@@ -91,7 +97,7 @@
             <tfoot>
               <tr>
                 {{-- colspan class utk menggabungkan colom --}}
-                <td colspan="12"></td>
+                <td colspan="14"></td>
                 <td><b>Jumlah Rata-rata</b></td>
                 <td>
                   @if($total > 0 && count($service) > 0 )

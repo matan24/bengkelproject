@@ -18,15 +18,15 @@ class ServiceController extends Controller
     public function service()
     {
         $jenis = Jenis::all();
-        $service = Service::with('jenis')->get(); 
-        
+        $service = Service::with('jenis')->get();
+
         return view('user.service', compact('jenis', 'service'));
     }
 
     public function konsumen()
     {
-          // dd("masuk");
-          $service = Service::selectRaw("
+        // dd("masuk");
+        $service = Service::selectRaw("
           service.nama as nama,
           service.alamat as alamat,
           service.no as no,
@@ -36,16 +36,16 @@ class ServiceController extends Controller
           jenisservice.kendala as kendala,
           jenisservice.waktu as lama_proses,
           jenisservice.nama as jenis
-         ")->join("jenisservice","service.id_jenis","=","jenisservice.id")
-         ->orderBy("jenisservice.waktu","ASC")
-         ->get();
+         ")->join("jenisservice", "service.id_jenis", "=", "jenisservice.id")
+            ->orderBy("jenisservice.waktu", "ASC")
+            ->get();
 
         return view('user.konsumenservice', compact('service'));
     }
 
     public function jadwalservice()
     {
-        $jadwal = Jadwal::with(["service","jenis"])->get();
+        $jadwal = Jadwal::with(["service", "jenis"])->get();
         // dd($jadwal);
         return view('user.jadwalservice', compact('jadwal'));
     }
@@ -57,22 +57,23 @@ class ServiceController extends Controller
 
     public function selesai()
     {
-          // dd("masuk");
-          $service = Service::selectRaw("
+        // dd("masuk");
+        $service = Service::selectRaw("
           service.nama as nama,
           service.alamat as alamat,
           service.no as no,
-          service.waktu as waktu,
+          service.waktu as waktu_tiba,
           service.tanggal as tanggal,
+          service.plat as plat,
           service.kendala as kendala,
-          service.status as status,
+          service.status as status, 
           service.keterangan as keterangan,
-          service.jam as jam,
+          service.jam as waktu_selesai,
           jenisservice.waktu as lama_proses,
           jenisservice.nama as jenis
-          ")->join("jenisservice","service.id_jenis","=","jenisservice.id")
-          ->orderBy("jenisservice.waktu","ASC")
-          ->get();
+          ")->join("jenisservice", "service.id_jenis", "=", "jenisservice.id")
+            ->orderBy("jenisservice.waktu", "ASC")
+            ->get();
         $dataservice = Dataservice::all();
         return view('user.selesaiservice', compact('service', 'dataservice'));
     }
@@ -104,22 +105,22 @@ class ServiceController extends Controller
             'waktu' => 'required',
             'tanggal' => 'required',
             'plat' => 'required',
-            'id_jenis' => 'required',      
-            'kendala' => 'required',                                         
+            'id_jenis' => 'required',
+            'kendala' => 'required',
         ]);
 
-        $service=Service::create([
-            'nama'=>$request->nama,
-            'alamat'=>$request->alamat,
-            'no'=>$request->no,
-            'waktu'=>$request->waktu,
-            'tanggal'=>$request->tanggal,
-            'plat'=>$request->plat,
-            'id_jenis'=>$request->id_jenis,
-            'kendala'=>$request->kendala,
-            'status'=>"Terdaftar",
-            'keterangan'=>"Menunggu di proses",
-            'jam'=>null,
+        $service = Service::create([
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+            'no' => $request->no,
+            'waktu' => $request->waktu,
+            'tanggal' => $request->tanggal,
+            'plat' => $request->plat,
+            'id_jenis' => $request->id_jenis,
+            'kendala' => $request->kendala,
+            'status' => "Terdaftar",
+            'keterangan' => "Menunggu di proses",
+            'jam' => null,
         ]);
 
         return redirect()->route('user.service')->with('status', 'anda berhasil mendaftar!');

@@ -32,9 +32,9 @@ class DataserviceController extends Controller
         service.kendala as kendala,
         jenisservice.waktu as lama_proses,
         jenisservice.nama as jenis
-         ")->join("jenisservice","service.id_jenis","=","jenisservice.id")
-         ->orderBy("jenisservice.waktu","ASC")
-         ->get();
+         ")->join("jenisservice", "service.id_jenis", "=", "jenisservice.id")
+            ->orderBy("jenisservice.waktu", "ASC")
+            ->get();
         return view('admin.input1.cetak', compact('service'));
     }
 
@@ -42,18 +42,21 @@ class DataserviceController extends Controller
     {
         // dd("masuk");
         $service = Service::selectRaw("
-            service.nama as nama,
-            service.alamat as alamat,
-            service.no as no,
-            service.waktu as waktu,
-            service.tanggal as tanggal,
-            service.plat as plat,
-            service.kendala as kendala,
-            jenisservice.waktu as lama_proses,
-            jenisservice.nama as jenis
-        ")->join("jenisservice","service.id_jenis","=","jenisservice.id")
-        ->orderBy("jenisservice.waktu","ASC")
-        ->get();
+        service.nama as nama,
+        service.alamat as alamat,
+        service.no as no,
+        service.waktu as waktu_tiba,
+        service.tanggal as tanggal,
+        service.plat as plat,
+        service.kendala as kendala,
+        service.status as status, 
+        service.keterangan as keterangan,
+        service.jam as waktu_selesai,
+        jenisservice.waktu as lama_proses,
+        jenisservice.nama as jenis
+        ")->join("jenisservice", "service.id_jenis", "=", "jenisservice.id")
+            ->orderBy("jenisservice.waktu", "ASC")
+            ->get();
 
         // dd($service);
         return view('admin.datakonsumen1', compact('service'));
@@ -66,28 +69,28 @@ class DataserviceController extends Controller
      */
     public function create()
     {
-            // dd("masuk");
-            $service = Service::selectRaw("
+        // dd("masuk");
+        $service = Service::selectRaw("
             service.id as id,
             service.nama as nama,
             service.alamat as alamat,
             service.no as no,
-            service.waktu as waktu,
+            service.waktu as waktu_tiba,
             service.tanggal as tanggal,
             service.plat as plat,
             service.kendala as kendala,
-            service.status as status,
+            service.status as status, 
             service.keterangan as keterangan,
-            service.jam as jam,
+            service.jam as waktu_selesai,
             jenisservice.nama as nama,
             jenisservice.waktu as lama_proses,
             jenisservice.nama as jenis
-        ")->join("jenisservice","service.id_jenis","=","jenisservice.id")
-        ->orderBy("jenisservice.waktu","ASC")
-        ->get();
+        ")->join("jenisservice", "service.id_jenis", "=", "jenisservice.id")
+            ->orderBy("jenisservice.waktu", "ASC")
+            ->get();
 
         $dataservice = Dataservice::all();
-        return view('admin.input1.createkonsumen', compact('dataservice', 'service')); 
+        return view('admin.input1.createkonsumen', compact('dataservice', 'service'));
     }
 
     /**
@@ -99,15 +102,15 @@ class DataserviceController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'status' => 'required',        
+            'status' => 'required',
             'keterangan' => 'required',
-            'jam' => 'required',               
+            'jam' => 'required',
         ]);
 
-        $dataservice=Dataservice::create([
-            'status'=>$request->status,
-            'keterangan'=>$request->keterangan,
-            'jam'=>$request->jam,
+        $dataservice = Dataservice::create([
+            'status' => $request->status,
+            'keterangan' => $request->keterangan,
+            'jam' => $request->jam,
         ]);
 
         return redirect()->route('admin.input1.createkonsumen')->with('status', 'Konsumen service ditambahkan!');
@@ -148,12 +151,12 @@ class DataserviceController extends Controller
         // dd($request->id);
         $id  = $request->id;
         Service::where("id", $id)
-        ->update([
-            'status' => $request->status,
-            'keterangan' => $request->keterangan,
-            'jam' => $request->jam ?? null,
-        ]);
-      
+            ->update([
+                'status' => $request->status,
+                'keterangan' => $request->keterangan,
+                'jam' => $request->jam ?? null,
+            ]);
+
         return redirect()->route('admin.input1.createkonsumen')->with('status', 'Data berhasil di update');
     }
 
@@ -165,7 +168,7 @@ class DataserviceController extends Controller
      */
     public function destroy(Service $service)
     {
-     
+
         $service->delete();
         return redirect()->route('admin.input1.createkonsumen')->with('status', 'Data berhasil dihapus!');
     }

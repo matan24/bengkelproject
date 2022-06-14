@@ -38,12 +38,17 @@
                 <th scope="col">No</th>
                 <th scope="col">Nama Konsumen</th>
                 <th scope="col">Alamat</th>
-                <th scope="col">WhatsApp/No HP</th>
+                <th scope="col">WhatsApp/Hp</th>
                 <th scope="col">Jam Service</th>
-                <th scope="col">Waktu Service</th>
                 <th scope="col">Tanggal Service</th>
-                <th scope="col">Keluhan</th>  
+                <th scope="col">No Kendaraan</th>
                 <th scope="col">Jenis Service</th>
+                <th scope="col">Waktu Pengerjaan</th>
+                <th scope="col">Status Service</th>
+                <th scope="col">Keterangan Service</th>
+                <th scope="col">Jenis Service</th>
+                <th scope="col">Waktu Tunggu</th>
+                <th scope="col">Waktu Selesai Service</th>
                 <th scope="col">TA</th>
               </tr>
             </thead>
@@ -51,27 +56,34 @@
               @php
                 $total  = 0;
               @endphp
-              @foreach ( $service as $item )  
+              @foreach ( $service as $item )
               @php
-              $total += $item->lama_proses;
-              @endphp 
+                $waktu_tunggu = ((strtotime($item->waktu_selesai) - strtotime($item->waktu_tiba)) / 60 - $item->lama_proses);
+                $ta= $item->lama_proses + $waktu_tunggu;
+                $total += $ta;
+                @endphp             
               <tr>                             
               <th scope="row">{{ $loop->iteration }}</th>
                 <td>{{ $item->nama }}</td>
                 <td>{{ $item->alamat }}</td>
                 <td>{{ $item->no }}</td>
-                <td>{{ $item->waktu }}</td>
-                <td>{{ $item->lama_proses . " Menit" }}</td>
+                <td>{{ $item->waktu_tiba }}</td>
                 <td>{{ $item->tanggal }}</td>
-                <td>{{ $item->kendala }}</td>
+                <td>{{ $item->plat }}</td>
                 <td>{{ $item->jenis ?? "Kosong" }}</td>
-                <td>{{ $item->lama_proses }}</td>  
+                <td>{{ $item->lama_proses }}</td>                  
+                <td>{{ $item->status }}</td>
+                <td>{{ $item->keterangan }}</td>
+                <td>{{ $item->jenis }}</td>
+                <td>{{ $waktu_tunggu }}</td>
+                <td>{{ $item->waktu_selesai }}</td>
+                <td>{{ $ta }}</td>       
               @endforeach
             </tbody>
             <tfoot>
               <tr>
                 {{-- colspan class utk menggabungkan colom --}}
-                <td colspan="8"></td>
+                <td colspan="13"></td>
                 <td><b>Jumlah Rata-rata</b></td>
                 <td>
                   @if($total > 0 && count($service) > 0 )
