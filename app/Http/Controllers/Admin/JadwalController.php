@@ -43,20 +43,14 @@ class JadwalController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id_nama' => 'required',
             'hari' => 'required',
-            'id_jenis' => 'required',
-            'waktu' => 'required',
             'tanggal' => 'required',
             'kuota' => 'required',
             'mekanik' => 'required',                  
         ]);
 
         $jadwal=Jadwal::create([
-            'id_nama'=>$request->id_nama,
             'hari'=>$request->hari,
-            'id_jenis'=>$request->id_jenis,
-            'waktu'=>$request->waktu,
             'tanggal'=>$request->tanggal,
             'kuota'=>$request->kuota,
             'mekanik'=>$request->mekanik,

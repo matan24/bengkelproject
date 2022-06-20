@@ -35,10 +35,7 @@
                                      
               <tr>
                 <th scope="col">No</th>
-                <th scope="col">Nama Konsumen</th>
                 <th scope="col">Hari</th>
-                <th scope="col">Jenis Service</th>
-                <th scope="col">Waktu Service</th>
                 <th scope="col">Tanggal Service</th>
                 <th scope="col">Kuota Service</th>
                 <th scope="col">Mekanik</th>
@@ -48,10 +45,7 @@
               @foreach ( $jadwal as $item )   
               <tr>                             
               <th scope="row">{{ $loop->iteration }}</th>
-                <td>{{ $item->service->nama }}</td>
                 <td>{{ $item->hari }}</td>
-                <td>{{ $item->jenis->nama }}</td>
-                <td>{{ $item->waktu }}</td>
                 <td>{{ $item->tanggal }}</td>
                 <td>{{ $item->kuota }}</td>
                 <td>{{ $item->mekanik }}</td>       

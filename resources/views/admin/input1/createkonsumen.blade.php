@@ -80,7 +80,7 @@
                 <td>{{ $item->jenis }}</td>
                 <td>{{ $waktu_tunggu }}</td>
                 <td>{{ $item->waktu_selesai }}</td>
-                <td>{{ $item->lama_proses }}</td>        
+                <td>{{ $ta }}</td>           
                 <td>
                     <button type="button" name="editButton" class="btn btn-success" data-toggle="modal" data-target="#editModal" data-id="{{ $item->id }}"><i class="fa-solid fa-pen-to-square"></i></button>
 

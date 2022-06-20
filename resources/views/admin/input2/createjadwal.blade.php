@@ -54,21 +54,6 @@
                  <a href="{{ route('admin.input2.show') }}" class="btn btn-info">Detail data</a>
                   <br><br>
 
-                  <td>
-                    <div class="form-group">
-                        <label for="id_nama">Pilih Konsumen</label>
-                        <select id="id_nama" name="id_nama" class="form-control custom-select">
-                            <option selected disabled>Nama Konsumen</option>
-                            @foreach ($service as $item)
-                                <option value= '{{ $item->id }}'>
-                                    {{ $item->nama }}
-                                </option>
-                            @endforeach
-                        </select>
-                     </div>
-                  </td>
-
-                <br>
                  <td>
                     <div class="form-group">
                       <label for="hari">Pilih hari</label>
@@ -97,29 +82,8 @@
                           </option>
                       </select>   
                   </div>
-                  </td>
-
-                  <br>
-                  <td>
-                    <div class="form-group">
-                        <label for="id_jenis">Jenis Service</label>
-                        <select id="id_jenis" name="id_jenis" class="form-control custom-select">
-                            <option selected disabled>Jenis Service</option>
-                            @foreach ($jenis as $item)
-                                <option value= '{{ $item->id }}'>
-                                    {{ $item->nama }}
-                                </option>
-                            @endforeach
-                        </select>
-                     </div>
-                  </td>
+                </td>
                   
-                  <div class="col-md-8form-group mt-3">
-                    <label for="waktu">Waktu service</label>
-                    <input type="text" class="form-control" name="waktu" id="waktu" required>
-                  </div>
-                </div>
-
                   <div class="form-group mt-3">
                     <label for="tanggal">Tanggal service</label>
                     <input type="date" class="form-control" name="tanggal" id="tanggal" required>
@@ -152,6 +116,9 @@
                           </option>
                           <option>
                           Free
+                          </option>
+                          <option>
+                          Ready
                           </option>
                           <option>
                           Bekerja

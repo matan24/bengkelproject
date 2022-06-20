@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Jadwal extends Model
 {
     protected $table = 'jadwalservice';
-    protected $fillable = ['id_nama', 'hari', 'id_jenis', 'waktu', 'tanggal', 'kuota', 'mekanik'];
+    protected $fillable = ['hari', 'tanggal', 'kuota', 'mekanik'];
 
     public function service()
     {

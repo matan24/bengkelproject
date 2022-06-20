@@ -27,14 +27,19 @@ class DataserviceController extends Controller
         service.nama as nama,
         service.alamat as alamat,
         service.no as no,
-        service.waktu as waktu,
+        service.waktu as waktu_tiba,
         service.tanggal as tanggal,
+        service.plat as plat,
         service.kendala as kendala,
+        service.status as status, 
+        service.keterangan as keterangan,
+        service.jam as waktu_selesai,
         jenisservice.waktu as lama_proses,
         jenisservice.nama as jenis
-         ")->join("jenisservice", "service.id_jenis", "=", "jenisservice.id")
+        ")->join("jenisservice", "service.id_jenis", "=", "jenisservice.id")
             ->orderBy("jenisservice.waktu", "ASC")
             ->get();
+        
         return view('admin.input1.cetak', compact('service'));
     }
 
@@ -82,7 +87,6 @@ class DataserviceController extends Controller
             service.status as status, 
             service.keterangan as keterangan,
             service.jam as waktu_selesai,
-            jenisservice.nama as nama,
             jenisservice.waktu as lama_proses,
             jenisservice.nama as jenis
         ")->join("jenisservice", "service.id_jenis", "=", "jenisservice.id")
