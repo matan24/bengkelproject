@@ -60,7 +60,7 @@
                 $waktu_tunggu = ((strtotime($item->waktu_selesai) - strtotime($item->waktu_tiba)) / 60 - $item->lama_proses);
                 $ta= $item->lama_proses + $waktu_tunggu;
                 $total += $ta;
-                @endphp             
+              @endphp              
               <tr>                             
               <th scope="row">{{ $loop->iteration }}</th>
                 <td>{{ $item->nama }}</td>
