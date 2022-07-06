@@ -77,19 +77,13 @@
                           <option {{ $jadwal->hari == 'Sabtu' ? 'selected' : '' }} value="Sabtu">
                           Sabtu
                           </option>
-                          <option {{ $jadwal->hari == 'Minggu' ? 'selected' : '' }} value="Minggu>
+                          <option {{ $jadwal->hari == 'Minggu' ? 'selected' : '' }} value="Minggu">
                           Minggu
                           </option>
                       </select>   
                   </div>
                   </td>
-                  
-                  <div class="col-md-8form-group mt-3">
-                    <label for="waktu">Waktu service</label>
-                    <input type="text" class="form-control" name="waktu" id="waktu" value="{{ $jadwal->waktu }}" required>
-                  </div>
-                </div>
-
+                
                   <div class="form-group mt-3">
                     <label for="tanggal">Tanggal service</label>
                     <input type="date" class="form-control" name="tanggal" id="tanggal" value="{{ $jadwal->tanggal }}" required>
@@ -119,6 +113,9 @@
                           </option>
                           <option {{ $jadwal->mekanik == 'Lainnya' ? 'selected' : '' }} value="Lainnya">
                           Lainnya
+                          </option>
+                          <option {{ $jadwal->mekanik == 'Ready' ? 'selected' : '' }} value="Ready">
+                          Ready
                           </option>
                           <option {{ $jadwal->mekanik == 'Free' ? 'selected' : '' }} value="Free">
                           Free

@@ -97,7 +97,6 @@ class JadwalController extends Controller
         ->update([
 
             'hari' => $request->hari,
-            'waktu' => $request->waktu,
             'tanggal' => $request->tanggal,
             'kuota' => $request->kuota,
             'mekanik' => $request->mekanik,

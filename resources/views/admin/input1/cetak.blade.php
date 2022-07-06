@@ -1,5 +1,5 @@
        
-          <h1 align="center">Cetak Data Konsumen Service</h1>
+          <h1 align="center">Laporan Service</h1>
           <table class="static" align="center" rules="all" border="1px" style="width: 95%">   
             <thead>
                                      

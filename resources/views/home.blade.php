@@ -64,7 +64,7 @@
         <div class="row">
 
           <div class="col-lg-6 video-box align-self-baseline position-relative">
-            <img src="{{ asset('how/assets/img/tia.png') }}" class="img-fluid" alt="">
+            <img src="{{ asset('how/assets/img/gh.jpeg') }}" class="img-fluid" alt="">
             <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>
           </div>
 
