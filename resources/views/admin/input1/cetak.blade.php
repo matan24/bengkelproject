@@ -49,5 +49,19 @@
                 <td>{{ $ta }}</td>       
               @endforeach
             </tbody>
+            <tfoot>
+              <tr>
+                {{-- colspan class utk menggabungkan colom --}}
+                <td colspan="13"></td>
+                <td><b>Jumlah Rata-rata</b></td>
+                <td>
+                  @if($total > 0 && count($service) > 0 )
+                    {{ $total/count($service) }}
+                  @else
+                  0
+                  @endif
+                </td>
+              </tr>
+            </tfoot>
      
           </table>
