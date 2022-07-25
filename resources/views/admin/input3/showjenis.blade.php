@@ -27,7 +27,6 @@
   
           <div class="section-title" data-aos="fade-up">
             <h2>Detail Data Jenis Service</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
           </div>
           <a href="{{ route('admin.input2.createjadwal') }}" class="btn btn-info">Kembali</a>
           <br><br>

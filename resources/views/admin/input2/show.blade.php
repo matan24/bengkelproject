@@ -26,8 +26,8 @@
         <div class="container">
   
           <div class="section-title" data-aos="fade-up">
-            <h2>Data Service Konsumen</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            <h2>Data Service</h2>
+            <p>Sistem kami akan selalu update mengenai informasi jadwal service</p>
           </div>
           <a href="{{ route('admin.input2.createjadwal') }}" class="btn btn-info">Kembali</a>
           <br><br>
@@ -44,7 +44,6 @@
               <tr>
                 <th scope="col">No</th>
                 <th scope="col">Hari</th>
-                <th scope="col">Waktu Service</th>
                 <th scope="col">Tanggal Service</th>
                 <th scope="col">Kuota Service</th>
                 <th scope="col">Mekanik</th>
@@ -56,7 +55,6 @@
               <tr>                             
               <th scope="row">{{ $loop->iteration }}</th>
                 <td>{{ $item->hari }}</td>
-                <td>{{ $item->waktu }}</td>
                 <td>{{ $item->tanggal }}</td>
                 <td>{{ $item->kuota }}</td>
                 <td>{{ $item->mekanik }}</td>
