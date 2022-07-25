@@ -83,11 +83,7 @@
                       </select>   
                      </div>
                   </td>
-<<<<<<< HEAD
-                
-=======
 
->>>>>>> e27ef53 (clearbagjadwalkonsumen)
                   <div class="form-group mt-3">
                     <label for="tanggal">Tanggal service</label>
                     <input type="date" class="form-control" name="tanggal" id="tanggal" value="{{ $jadwal->tanggal }}" required>
