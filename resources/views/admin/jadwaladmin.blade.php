@@ -27,7 +27,7 @@
   
           <div class="section-title" data-aos="fade-up">
             <h2>Info Jadwal Service</h2>
-            <p>Sistem kami akan selalu update mengenai informasi jadwal service</p>
+            <p>Sistem kami akan selalu cerdas update mengenai informasi jadwal service</p>
           </div>
   
           <table class="table table-striped table-success table-bordered">
