@@ -16,7 +16,7 @@ class CreateJadwalservice extends Migration
         Schema::create('jadwalservice', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('hari');
-            $table->string('tanggal');
+            $table->string('waktu');
             $table->string('kuota');
             $table->string('mekanik');
             $table->timestamps();

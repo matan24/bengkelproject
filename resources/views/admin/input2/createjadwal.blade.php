@@ -85,8 +85,8 @@
                 </td>
                   
                   <div class="form-group mt-3">
-                    <label for="tanggal">Tanggal service</label>
-                    <input type="date" class="form-control" name="tanggal" id="tanggal" required>
+                    <label for="waktu">Waktu Service</label>
+                    <input type="text" class="form-control" name="waktu" id="waktu" required>
                   </div>
 
                   <div class="form-group mt-3">

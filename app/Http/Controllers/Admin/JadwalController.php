@@ -44,14 +44,14 @@ class JadwalController extends Controller
     {
         $request->validate([
             'hari' => 'required',
-            'tanggal' => 'required',
+            'waktu' => 'required',
             'kuota' => 'required',
             'mekanik' => 'required',                  
         ]);
 
         $jadwal=Jadwal::create([
             'hari'=>$request->hari,
-            'tanggal'=>$request->tanggal,
+            'waktu'=>$request->waktu,
             'kuota'=>$request->kuota,
             'mekanik'=>$request->mekanik,
         ]);
@@ -97,7 +97,7 @@ class JadwalController extends Controller
         ->update([
 
             'hari' => $request->hari,
-            'tanggal' => $request->tanggal,
+            'waktu' => $request->waktu,
             'kuota' => $request->kuota,
             'mekanik' => $request->mekanik,
         ]);
