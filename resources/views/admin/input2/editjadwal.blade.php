@@ -85,7 +85,7 @@
                   </td>
 
                   <div class="form-group mt-3">
-                    <label for="waktu">Waktu Service</label>
+                    <label for="waktu">Waktu Service Konsumen</label>
                     <input type="text" class="form-control" name="waktu" id="waktu" value="{{ $jadwal->waktu }}" required>
                   </div>
 
