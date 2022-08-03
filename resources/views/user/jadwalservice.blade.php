@@ -37,7 +37,7 @@
                 <th scope="col">No</th>
                 <th scope="col">Hari</th>
                 <th scope="col">Waktu Service Konsumen</th>
-                <th scope="col">Kuota Service Konsumen</th>
+                <th scope="col">Kuota Service</th>
                 <th scope="col">Mekanik</th>
               </tr>
             </thead>
