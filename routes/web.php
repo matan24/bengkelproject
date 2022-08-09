@@ -9,6 +9,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\Admin\DataserviceController;
 use App\Http\Controllers\Admin\JadwalController;
 use App\Http\Controllers\Admin\JenisController;
+use App\Http\Controllers\Admin\MekanikController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,7 +40,6 @@ Route::get('/jadwalservice', [ServiceController::class, 'jadwalservice'])->name(
 Route::get('/contact', [ServiceController::class, 'contact'])->name('user.contact');
 Route::get('/selesaiservice', [ServiceController::class, 'selesai'])->name('user.selesaiservice');
 
-
 //Admin
 Route::get('/dataservice', [DataserviceController::class, 'dataservice'])->name('admin.dataservice');
 Route::get('/datakonsumen1', [DataserviceController::class, 'datakonsumen1'])->name('admin.datakonsumen1');
@@ -64,3 +64,12 @@ Route::get('/showjenis', [JenisController::class, 'showjenis'])->name('admin.inp
 Route::get('/editjenis/{jenis}', [JenisController::class, 'editjenis'])->name('admin.input3.editjenis');
 Route::patch('/update/{id}', [JenisController::class, 'update'])->name('admin.input3.editjenis.update');
 Route::delete('/showjenis/{jenis}', [JenisController::class, 'destroy'])->name('admin.input3.showjenis.delete');
+
+Route::get('/createlm', [MekanikController::class, 'createlm'])->name('admin.input4.createlm');
+Route::post('/createlm', [MekanikController::class, 'store'])->name('admin.input4.createlm.store');
+Route::get('/showlm', [MekanikController::class, 'showlm'])->name('admin.input4.showlm');
+Route::get('/editlm/{mekanik}', [MekanikController::class, 'editlm'])->name('admin.input4.editlm');
+Route::patch('/update/{id}', [MekanikController::class, 'update'])->name('admin.input4.editlm.update');
+Route::delete('/showlm/{mekanik}', [MekanikController::class, 'destroy'])->name('admin.input4.showlm.delete');
+Route::get('/laporanmk', [MekanikController::class, 'laporanmk'])->name('admin.laporanmk');
+Route::get('/cetaklm', [MekanikController::class, 'cetaklm'])->name('admin.cetaklm');

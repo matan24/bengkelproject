@@ -111,6 +111,11 @@
                     <label for="tanggal">Tanggal service</label>
                     <input type="date" class="form-control" name="tanggal" id="tanggal" value="{{ $dataservice->tanggal }}" required>
                   </div>
+
+                  <div class="form-group mt-3">
+                    <label for="jservice">Kuota Service</label>
+                    <input type="text" class="form-control" name="jservice" id="jservice" value="{{ $dataservice->jservice }}" required>
+                  </div>
                   
                   <td>
                     <div class="form-group">

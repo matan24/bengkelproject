@@ -113,9 +113,47 @@
                                         <label for="tanggal">Tanggal</label>
                                         <input type="date" class="form-control" name="tanggal" id="tanggal" required>
                                     </div>
+                                    <br>
+
+                                    <td>
+                                      <div class="form-group">
+                                          <label for="jservice">Jam Service</label>
+                                          <select id="jservice" name="jservice" class="form-control custom-select">
+                                              <option selected disabled>Pilih</option>
+                                              <option>
+                                                08:00 - kuota tersedia: 4
+                                              </option>
+                                              <option>
+                                                09:00 - kuota tersedia: 4
+                                              </option>
+                                              <option>
+                                                10:00 - kuota tersedia: 3
+                                              </option>
+                                              <option>
+                                                11:00 - kuota tersedia: 2
+                                              </option>
+                                              <option>
+                                                13:00 - kuota tersedia: 4
+                                              </option>
+                                              <option>
+                                                14:00 - kuota tersedia: 3
+                                              </option>
+                                              <option>
+                                                15:00 - kuota tersedia: 3
+                                              </option>
+                                              <option>
+                                                16:00 - kuota tersedia: 2
+                                              </option>
+                                              <option>
+                                                17:00 - kuota tersedia: 2
+                                              </option>
+
+                                          </select>
+                                      </div>
+                                  </td>
                                    
                                     <div class="form-group mt-3">
-                                      <label for="plat">No Kendaraan</label>
+                                      <label for="plat">Nomor Kendaraan</label>
                                       <input type="text" class="form-control" name="plat" id="plat" required>
                                     </div>
 
@@ -133,6 +171,37 @@
                                             </select>
                                         </div>
                                     </td>
+                                    {{-- <br>
+
+                                    <td>
+                                      <div class="form-group">
+                                          <label for="jservice">Jenis Service & Biaya</label>
+                                          <select id="jservice" name="jservice" class="form-control custom-select">
+                                              <option selected disabled>Pilih</option>
+                                              <option>
+                                                Ganti oli Rp.200.000
+                                              </option>
+                                              <option>
+                                                Service berkala Rp.300.000
+                                              </option>
+                                              <option>
+                                                Service bumper Rp.400.000
+                                              </option>
+                                              <option>
+                                                Tune-up Rp.10.000.000
+                                              </option>
+                                              <option>
+                                                Service jok mobil Rp.400.000
+                                              </option>
+                                              <option>
+                                                Ganti ban Rp.800.000
+                                              </option>
+                                              <option>
+                                                Repaint full body Rp.5.000.000
+                                              </option>
+                                          </select>
+                                      </div>
+                                  </td> --}}
 
                                     <div class="form-group mt-3">
                                         <label for="kendala">Kendala mobil</label>

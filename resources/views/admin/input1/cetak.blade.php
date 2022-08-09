@@ -1,5 +1,6 @@
        
-          <h1 align="center">Laporan Service</h1>
+          <h1 align="center"><u>Tia Ban Autoservice</u></h1>
+          <h3 align="center">Laporan Service</h3>
           <table class="static" align="center" rules="all" border="1px" style="width: 95%">   
             <thead>
                                      
@@ -10,6 +11,7 @@
                 <th scope="col">WhatsApp/Hp</th>
                 <th scope="col">Jam Service</th>
                 <th scope="col">Tanggal Service</th>
+                <th scope="col">Kuota Service</th>
                 <th scope="col">No Kendaraan</th>
                 <th scope="col">Jenis Service</th>
                 <th scope="col">Waktu Pengerjaan</th>
@@ -38,6 +40,7 @@
                 <td>{{ $item->no }}</td>
                 <td>{{ $item->waktu_tiba }}</td>
                 <td>{{ $item->tanggal }}</td>
+                <td>{{ $item->jservice }}</td>
                 <td>{{ $item->plat }}</td>
                 <td>{{ $item->jenis ?? "Kosong" }}</td>
                 <td>{{ $item->lama_proses }}</td>                  
@@ -63,5 +66,15 @@
                 </td>
               </tr>
             </tfoot>
-     
           </table>
+          <br>
+          <div>
+            <h5><b>Pekanbaru</b></h5>
+          </div>
+          <div>
+            <h5><b>Kepala Bengkel</b></h5>
+          </div>
+          <br>
+          <div>
+            <h5><b><u>...........................</u></b></h5>
+          </div>

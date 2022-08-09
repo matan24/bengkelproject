@@ -15,7 +15,8 @@
 
   <!-- Google Fonts -->
   <link href="{{ asset('how/https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i') }}" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  
   <!-- Vendor CSS Files -->
   <link href="{{ asset('how/assets/vendor/aos/aos.css') }}" rel="stylesheet">
   <link href="{{ asset('how/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -56,7 +57,7 @@
             <ul>
               <li><a href="{{ route('admin.datakonsumen1') }}">Konsumen Service</a></li>
               <li><a href="{{ route('admin.jadwaladmin') }}">Jadwal Service Konsumen</a></li>
-
+              <li><a href="{{ route('admin.laporanmk') }}">Laporan Mekanik</a></li>
             </ul>
           </li>
 
@@ -65,6 +66,7 @@
               <li><a href="{{ route('admin.input1.createkonsumen') }}">Input Konsumen Selesai Service</a></li>
               <li><a href="{{ route('admin.input2.createjadwal') }}">Input Jadwal Service</a></li>
               <li><a href="{{ route('admin.input3.createjenis') }}">Input Jenis Service</a></li>
+              <li><a href="{{ route('admin.input4.createlm') }}">Input Laporan Mekanik</a></li>
             </ul>
           </li>
 

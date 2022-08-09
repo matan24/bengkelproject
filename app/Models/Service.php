@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Service extends Model
 {
     protected $table = 'service';
-    protected $fillable = ['nama', 'alamat', 'no', 'waktu', 'tanggal', 'plat', 'id_jenis', 'kendala', 'status', 'keterangan', 'jam'];
+    protected $fillable = ['nama', 'alamat', 'no', 'waktu', 'tanggal', 'jservice', 'plat', 'id_jenis', 'kendala', 'status', 'keterangan', 'jam'];
 
     public function jenis()
     {

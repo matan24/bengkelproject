@@ -20,6 +20,7 @@ class CreateService extends Migration
             $table->string('no');
             $table->string('waktu');
             $table->string('tanggal');
+            $table->string('jservice');
             $table->string('plat');
             $table->unsignedBigInteger('id_jenis');
             $table->string('status');
