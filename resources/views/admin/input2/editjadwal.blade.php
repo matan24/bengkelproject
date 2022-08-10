@@ -39,7 +39,7 @@
         <!-- ======= Contact Section ======= -->
        <section id="contact" class="contact">
         <div class="container">
-           
+          
           <div class="row mt-5">
   
               <form method="post" action="{{ route('admin.input2.editjadwal.update', $jadwal->id )}}">
@@ -83,9 +83,47 @@
                       </select>   
                      </div>
                   </td>
+                  <br>
+
+                  <td>
+                    <div class="form-group">
+                        <label for="kuotaservice">Pilih Kuota</label>
+                        <select id="kuotaservice" name="kuotaservice" class="form-control custom-select">
+                            <option selected disabled>Pilih</option>
+                            <option {{ $jadwal->kuotaservice == '08:00 - kuota tersedia: 4' ? 'selected' : '' }} value="08:00 - kuota tersedia: 4">
+                              08:00 - kuota tersedia: 4
+                            </option>
+                            <option {{ $jadwal->kuotaservice == '09:00 - kuota tersedia: 4' ? 'selected' : '' }} value="09:00 - kuota tersedia: 4">
+                              09:00 - kuota tersedia: 4
+                            </option>
+                            <option {{ $jadwal->kuotaservice == '10:00 - kuota tersedia: 3' ? 'selected' : '' }} value="10:00 - kuota tersedia: 3">
+                              10:00 - kuota tersedia: 3
+                            </option>
+                            <option {{ $jadwal->kuotaservice == '11:00 - kuota tersedia: 2' ? 'selected' : '' }} value="11:00 - kuota tersedia: 2">
+                              11:00 - kuota tersedia: 2
+                            </option>
+                            <option {{ $jadwal->kuotaservice == '13:00 - kuota tersedia: 4' ? 'selected' : '' }} value="13:00 - kuota tersedia: 4"> 
+                              13:00 - kuota tersedia: 4
+                            </option>
+                            <option {{ $jadwal->kuotaservice == '14:00 - kuota tersedia: 3' ? 'selected' : '' }} value="14:00 - kuota tersedia: 3">
+                              14:00 - kuota tersedia: 3
+                            </option>
+                            <option {{ $jadwal->kuotaservice == '15:00 - kuota tersedia: 3' ? 'selected' : '' }} value="15:00 - kuota tersedia: 3">
+                              15:00 - kuota tersedia: 3
+                            </option>
+                            <option {{ $jadwal->kuotaservice == '16:00 - kuota tersedia: 2' ? 'selected' : '' }} value="16:00 - kuota tersedia: 2">
+                              16:00 - kuota tersedia: 2
+                            </option>
+                            <option {{ $jadwal->kuotaservice == '17:00 - kuota tersedia: 2' ? 'selected' : '' }} value="17:00 - kuota tersedia: 2">
+                              17:00 - kuota tersedia: 2
+                            </option>
+                        </select>
+                    </div>
+                </td>
+    
 
                   <div class="form-group mt-3">
-                    <label for="waktu">Waktu Service Konsumen</label>
+                    <label for="waktu">Jam Buka</label>
                     <input type="text" class="form-control" name="waktu" id="waktu" value="{{ $jadwal->waktu }}" required>
                   </div>
 

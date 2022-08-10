@@ -44,8 +44,9 @@
               <tr>
                 <th scope="col">No</th>
                 <th scope="col">Hari</th>
-                <th scope="col">Waktu Service Konsumen</th>
-                <th scope="col">Kuota Service</th>
+                <th scope="col">Pilih Kuota</th>
+                <th scope="col">Jam Buka Service</th>
+                <th scope="col">Kuota Konsumen Service</th>
                 <th scope="col">Mekanik</th>
                 <th scope="col">Aksi</th>
               </tr>
@@ -55,6 +56,7 @@
               <tr>                             
               <th scope="row">{{ $loop->iteration }}</th>
                 <td>{{ $item->hari }}</td>
+                <td>{{ $item->kuotaservice }}</td>
                 <td>{{ $item->waktu }}</td>
                 <td>{{ $item->kuota }}</td>
                 <td>{{ $item->mekanik }}</td>

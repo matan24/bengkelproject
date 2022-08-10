@@ -83,14 +83,51 @@
                       </select>   
                   </div>
                 </td>
+                <br>
+
+                <td>
+                  <div class="form-group">
+                      <label for="kuotaservice">Pilih Kuota</label>
+                      <select id="kuotaservice" name="kuotaservice" class="form-control custom-select">
+                          <option selected disabled>Pilih</option>
+                          <option>
+                            08:00 - kuota tersedia: 4
+                          </option>
+                          <option>
+                            09:00 - kuota tersedia: 4
+                          </option>
+                          <option>
+                            10:00 - kuota tersedia: 3
+                          </option>
+                          <option>
+                            11:00 - kuota tersedia: 2
+                          </option>
+                          <option>
+                            13:00 - kuota tersedia: 4
+                          </option>
+                          <option>
+                            14:00 - kuota tersedia: 3
+                          </option>
+                          <option>
+                            15:00 - kuota tersedia: 3
+                          </option>
+                          <option>
+                            16:00 - kuota tersedia: 2
+                          </option>
+                          <option>
+                            17:00 - kuota tersedia: 2
+                          </option>
+                      </select>
+                  </div>
+              </td>
                   
                   <div class="form-group mt-3">
-                    <label for="waktu">Waktu Service Konsumen</label>
+                    <label for="waktu">Jam Buka</label>
                     <input type="text" class="form-control" name="waktu" id="waktu" required>
                   </div>
 
                   <div class="form-group mt-3">
-                    <label for="kuota">Kuota service</label>
+                    <label for="kuota">Kuota Konsumen Service</label>
                     <input type="text" class="form-control" name="kuota" id="kuota" required>
                   </div><br>
 

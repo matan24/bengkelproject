@@ -117,7 +117,7 @@
 
                                     <td>
                                       <div class="form-group">
-                                          <label for="jservice">Jam Service</label>
+                                          <label for="jservice">Kuota Service</label>
                                           <select id="jservice" name="jservice" class="form-control custom-select">
                                               <option selected disabled>Pilih</option>
                                               <option>
