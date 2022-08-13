@@ -117,6 +117,9 @@
                           <option>
                             17:00 - kuota tersedia: 2
                           </option>
+                          <option>
+                            Kuota Penuh
+                          </option>
                       </select>
                   </div>
               </td>

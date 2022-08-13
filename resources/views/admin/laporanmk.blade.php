@@ -1,6 +1,6 @@
 @extends('layout.admin')
 
-@section('title', 'Laporan Mekanik Perhari| Bengkel Mobil')
+@section('title', 'Laporan Mekanik Perhari | Bengkel Mobil')
 
 @section('container')
 
