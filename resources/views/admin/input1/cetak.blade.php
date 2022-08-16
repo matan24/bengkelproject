@@ -1,3 +1,5 @@
+      
+     <img src="{{ asset('how/assets/img/tiaban.jpg') }}" width="150px" class="img-fluid" alt="">
        
           <h1 align="center"><u>Tia Ban Autoservice</u></h1>
           <h3 align="center">Laporan Service</h3>

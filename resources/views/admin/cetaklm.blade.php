@@ -1,5 +1,7 @@
 
-          
+      <img src="{{ asset('how/assets/img/tiaban.jpg') }}" width="150px" class="img-fluid" alt="">
+    
+
      <h1 align="center"><u>Tia Ban Autoservice</u></h1>
      <h3 align="center">Laporan Mekanik Perhari</h3>
           <table class="static" align="center" rules="all" border="1px" style="width: 95%">               
